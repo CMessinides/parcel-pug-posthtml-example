@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title Parcel, Pug, and PostHTML
+	body
+		h1 Parcel, Pug, and PostHTML
+		img(src="/image.png" alt="A 150 by 150 grey square." width="auto" height="auto" style="display:block")
+		p
+			| This HTML page is generated from a Pug file by Parcel. I want Parcel to
+			| further transform the HTML output with PostHTML, specifically the
+			| #[code posthtml-img-autosize] plugin.
+			|
+			| For example, I would like the #[code #{"<img />"}] tag above to be output as:
+		figure
+			pre
+				code #{`<img src="..." alt="..." width="150" height="150" />`}
+		p
+			| But instead, the tag is output as:
+		figure
+			pre
+				code #{`<img src="..." alt="..." width="auto" height="auto" />`}
